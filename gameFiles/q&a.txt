@@ -1,0 +1,27 @@
+Q: Why am I here?
+A: To test the terminal, of course!
+
+Q: When can I leave?
+A: After we feel you are done testing.
+
+Q: Can I leave now?
+A: No.
+
+Q: Who am I?
+A: You.
+
+Q: Why can't I remember anything?
+A: After signup, we have to inject you with a memory-erasing compound in order to make sure you do not remember anything after testing (as seen on 14.5c in the waiver you signed upon entry). 
+   An unwanted side effect is total amnesia. It's temporary though!
+
+Q: What do I do if the computer stops working?
+A: Run "troubleshooting.py"
+
+Q: What if it doesn't turn on?
+A: Call IT.
+
+Q: I can't call IT.
+A: Call HR.
+
+Q: I can't call anyone.
+A: Well then, you're on your own. Sorry for the inconvinience!
