@@ -2,7 +2,9 @@
 
 #include <ostream>
 
-
+/*credit to Vorbrodt for this file, it seems pretty useful, but I'm probably not going to use it.
+https://vorbrodt.blog/2019/03/21/ansi-escape-codes/
+*/
 
 #define ANSI_ESCAPE_CODE(name, code) \
 	inline struct ansi_escape_code_##name \
