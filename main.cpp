@@ -6,12 +6,21 @@
 #include <ctime>
 #include <thread>
 #include <chrono>
+#include <cstdlib>
 //#include <windows.h> doesn't work, as this codespace is not running on windows
 #include <unistd.h>
 //#include "ansi_escape_code.hpp"
 using namespace std;
 //using namespace ansi_escape_code;
 //global variables
+bool game = true;
+int roomNum = 0;
+bool sideOpen = false;
+const int menu = 0;
+const int intro = 1;
+const int room = 2;
+const int computerOn = 3;
+//terminal variables
 string redColor = "\033[0;31m";
 string redBackground = "\033[41m";
 string reset = "\033[0m";
@@ -33,19 +42,48 @@ string cyanBackground = "\033[46m";
 string boldWhiteColor = "\033[1;37m";
 string italics = "\033[3m";
 string clear = "\033[H\033[2J";
+typedef string::const_iterator iter;
 //functions
 void wait(int time) {
-    usleep(time * 1000000);
+    usleep(time * 100000);
 }
 /*void text(string text = "Hello World", int delay = 0.1, bool enterAfterDone = true) {
-    for (char i: text) {
-        cout << i << flush;
+    iter begin = text.begin();
+    iter end = text.end();
+    for (iter it = begin; it != end; ++it) {
+        cout.put(*it);
+        usleep(delay * 1000000);
     }
 }*/
 int main() {
-    cout << "testing\n";
-    cout << "will it work?\n";
-    wait(3);
-    cout << "timer works";
-    text("hope this works");
+    while (game == true) {
+        //menu
+        if (roomNum == menu) {
+            string begin;
+            cout << "░▒▓███████▓▒░░▒▓█▓▒░       ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓" << "▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░ \n" << "░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░" << "▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ \n" << "░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░" << "▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ \n" << "░▒▓███████▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓███████▓▒░░▒▓█▓▒░░" << "▒▓█▓▒░░▒▓██████▓▒░  \n" << "░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░" << "▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ \n" << "░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░" << "▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ \n" << "░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░ ░▒▓████" << "██▓▒░░▒▓█▓▒░░▒▓█▓▒░ \n";
+            cout << "Begin? [Y/N]\n";
+            cin >> begin;
+            if (begin == "y" || begin == "y") {
+                cout << "Let's begin.\n";
+                wait(2);
+                cout << clear;
+                roomNum = 1;
+            }
+            else if (begin == "n" || begin == "N") {
+                cout << "Not like you had a choice anyway.\n";
+                wait(3);
+                cout << clear;
+                roomNum = 1;
+            }
+        }
+        //game intro
+        if (roomNum == 1) {
+            cout << greenItalics << "Wake up. Get on your feet.";
+            wait(2);
+            cout << clear;
+            cout << "You need to wake up.";
+            
+        }
+    }
+
 }
