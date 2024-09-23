@@ -1,5 +1,4 @@
 # Blackbox
----
 You don't know where you are.
 You don't know who you are.
 You wake up in a small room with a computer.
