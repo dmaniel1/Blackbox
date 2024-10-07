@@ -45,16 +45,26 @@ string clear = "\033[H\033[2J";
 typedef string::const_iterator iter;
 //functions
 void wait(int time) {
-    usleep(time * 100000);
+    this_thread::sleep_for(chrono::seconds(time));
 }
-/*void text(string text = "Hello World", int delay = 0.1, bool enterAfterDone = true) {
+void text(string text = "Hello World", int delay = 0.1, bool enterAfterDone = true) {
+
     iter begin = text.begin();
     iter end = text.end();
     for (iter it = begin; it != end; ++it) {
         cout.put(*it);
-        usleep(delay * 1000000);
+        this_thread::sleep_for(chrono::seconds(delay));
     }
-}*/
+}
+void introFunc() {
+    if (roomNum == 1) {
+        cout << greenItalics << "Wake up. Get on your feet.";
+        wait(2);
+        cout << clear;
+        cout << "You need to wake up.";
+            
+    }
+}
 int main() {
     while (game == true) {
         //menu
@@ -77,13 +87,7 @@ int main() {
             }
         }
         //game intro
-        if (roomNum == 1) {
-            cout << greenItalics << "Wake up. Get on your feet.";
-            wait(2);
-            cout << clear;
-            cout << "You need to wake up.";
-            
-        }
+        thread thread_obj(introFunc);
     }
 
 }
