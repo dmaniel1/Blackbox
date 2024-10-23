@@ -80,8 +80,10 @@ int main() {
                 roomNum = 1;
             }
             else if (begin == "n" || begin == "N") {
-                cout << "fucking work you bitch"
+                cout << "fucking work you bitch";
             }
+        }
+        else if (roomNum == intro) {
         }
     }
 }
