@@ -80,14 +80,8 @@ int main() {
                 roomNum = 1;
             }
             else if (begin == "n" || begin == "N") {
-                cout << "Not like you had a choice anyway.\n";
-                wait(3);
-                cout << clear;
-                roomNum = 1;
+                cout << "fucking work you bitch"
             }
         }
-        //game intro
-        thread thread_obj(introFunc);
     }
-
 }
